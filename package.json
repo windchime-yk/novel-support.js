@@ -1,0 +1,16 @@
+{
+  "name": "replace-ruby",
+  "version": "0.0.1",
+  "description": "I am trying to realize the ruby notation of \"Syosetsuka Ni Narou\" by VanillaJS.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/windChimeYK/replaceRuby.git"
+  },
+  "author": "WindChimeYK",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/windChimeYK/replaceRuby/issues"
+  },
+  "homepage": "https://github.com/windChimeYK/replaceRuby#readme"
+}
