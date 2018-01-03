@@ -1,2 +1,24 @@
 # replaceRuby
-I am trying to realize the ruby notation of "Syosetsuka Ni Narou" by VanillaJS.
+This package was made to easily reproduce the ruby notation of "Shosetsuka Ni Narou" on the website. Since we are using VanillaJS, jQuery is not necessary.
+
+## Install
+``` 
+npm install replace-ruby
+```
+or
+```html
+<script src="https://cdn.jsdelivr.net/npm/replace-ruby/lib/index.js"></script>
+
+```
+
+## How to use 
+```html
+<div id="replace">
+  <!-- write -->
+</div>
+```
+```javascript
+import replaceRuby from "replace-ruby"; // npm used
+
+replaceRuby('#replace');
+```
