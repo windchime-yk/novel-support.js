@@ -1,16 +1,16 @@
 {
-  "name": "replace-ruby",
+  "name": "novel-support.js",
   "version": "0.0.1",
-  "description": "I am trying to realize the ruby notation of \"Syosetsuka Ni Narou\" by VanillaJS.",
+  "description": "jQuery非依存の、小説投稿サイト代替記号の変換ライブラリ",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/windChimeYK/replaceRuby.git"
+    "url": "git+https://github.com/windChimeYK/novel-support.js.git"
   },
   "author": "WindChimeYK",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/windChimeYK/replaceRuby/issues"
+    "url": "https://github.com/windChimeYK/novel-support.js/issues"
   },
-  "homepage": "https://github.com/windChimeYK/replaceRuby#readme"
+  "homepage": "https://github.com/windChimeYK/novel-support.js#readme"
 }
