@@ -1,7 +1,7 @@
-# replaceRuby
+# novel-support.js
 Japanese:  
-このパッケージは『小説家になろう』のルビ記法を再現するために作られました。VanillaJSを使用しており、jQueryは必要ありません。  
-今後、他の小説投稿サイトのルビ記法も加える予定です。  
+このパッケージは『小説家になろう』のルビ記法や、『カクヨム』の圏点記法を再現するために作られました。VanillaJSを使用しており、jQueryは必要ありません。  
+今後、可能な限り他の小説投稿サイトの特殊記法を加える予定です。  
 **現在、npmとCDNには公開していません。今しばらくお待ち下さい。**  
 よりよいパッケージを目指しておりますので、なにか問題や改善点などありましたら、[Issues](https://github.com/windChimeYK/replaceRuby/issues)までお願いいたします。 
 
@@ -9,7 +9,7 @@ English:
 This package was made to easily reproduce the ruby notation and "Deep Furigana". Since we are using VanillaJS, jQuery is not necessary.  
 **I have not released it to npm and CDN yet. Just a moment, please.**
 
-## How to use
+## Usage
 ``` JavaScript
 replaceRuby('idName');
 ```
