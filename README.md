@@ -11,7 +11,7 @@ This package was made to easily reproduce the ruby notation and "Deep Furigana".
 
 ## Usage
 ``` JavaScript
-new replaceRuby('idName');
+new novelSupport('idName');
 ```
 変換箇所の指定はidでおこなってください（classは対応していません）  
 関数を複数置いてそれぞれにidを割り振ることで、複数指定も可能です。  
