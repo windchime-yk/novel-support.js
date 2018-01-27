@@ -11,13 +11,12 @@ This package was made to easily reproduce the ruby notation and "Deep Furigana".
 
 ## Usage
 ``` JavaScript
-replaceRuby('idName');
+new replaceRuby('idName');
 ```
 変換箇所の指定はidでおこなってください（classは対応していません）  
-関数を複数置いてそれぞれにidを割り振ることで、複数指定も可能です。
+関数を複数置いてそれぞれにidを割り振ることで、複数指定も可能です。  
+**npmとCDNでの実装を想定しているので、そちらで公開されていない現在はご利用できません。**
+あらかじめご了承ください。
 
 ## Inspire
 [各種小説投稿サイトのルビ記法をJavaScriptで実現する](https://qiita.com/8amjp/items/d7c46d9dee0da4d530ef)
-
-## Collaborators
-[N.C（サンプル文章提供者）](https://twitter.com/Shijima666)
