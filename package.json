@@ -8,7 +8,8 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.1"
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.17.0"
   },
   "files": [
     "lib",
@@ -18,13 +19,14 @@
   ],
   "homepage": "https://github.com/windChimeYK/novel-support.js#readme",
   "license": "ISC",
-  "main": "./dist/bundle.js",
+  "main": "./dist/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/windChimeYK/novel-support.js.git"
   },
   "scripts": {
-    "build": "babel --compact=true ./lib/novel-support.js -o ./dist/bundle.js -s",
-    "watch": "babel ./lib/novel-support.js -w -o ./dist/bundle.js"
+    "babel": "babel",
+    "build": "babel --compact=true ./lib/novel-support.js -o ./dist/index.js -s --no-comments",
+    "watch": "babel ./lib/novel-support.js -w -o ./dist/index.js"
   }
 }
