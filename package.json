@@ -26,7 +26,7 @@
   },
   "scripts": {
     "babel": "babel",
-    "build": "babel --compact=true ./lib/novel-support.js -o ./dist/index.js -s --no-comments",
-    "watch": "babel ./lib/novel-support.js -w -o ./dist/index.js"
+    "build": "babel --compact=true ./lib/novel-support.js -o ./dist/js/index.js -s --no-comments",
+    "watch": "babel ./lib/novel-support.js -w -o ./dist/js/index.js"
   }
 }
