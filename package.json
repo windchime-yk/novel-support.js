@@ -14,12 +14,13 @@
   "files": [
     "lib",
     "dist",
+    "LICENSE.txt",
     "README.md",
     "package.json"
   ],
   "homepage": "https://github.com/windChimeYK/novel-support.js#readme",
   "license": "ISC",
-  "main": "./dist/index.js",
+  "main": "./dist/js/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/windChimeYK/novel-support.js.git"
