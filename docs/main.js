@@ -7,7 +7,7 @@ const novelSupport = (elem, option = {}) => {
   // デフォルト引数（一部を上書きすると他がundefinedになるので、条件演算子で別途定義）
   const optionContent = option.content === undefined ? 'text' : option.content;
   const optionRewrite = option.rewrite === undefined ? false : option.rewrite;
-  console.log(optionContent, optionMark, optionRewrite);
+  console.log(optionContent, optionRewrite);
 
   // 各変数群
   const txtBase = '<p class="ns_indent">$1</p>';
