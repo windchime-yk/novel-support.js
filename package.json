@@ -8,11 +8,13 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-plugin-transform-remove-export": "^1.0.0",
     "babel-preset-env": "^1.6.1",
-    "eslint": "^4.17.0"
+    "eslint": "^4.17.0",
+    "node-sass": "^4.9.0"
   },
   "files": [
-    "lib",
+    "src",
     "dist",
     "LICENSE.txt",
     "README.md",
@@ -21,13 +23,17 @@
   "homepage": "https://github.com/windChimeYK/novel-support.js#readme",
   "license": "ISC",
   "main": "./dist/js/index.js",
+  "unpkg": "./dist/js/novel-support.js",
+  "jsdelivr": "./dist/js/novel-support.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/windChimeYK/novel-support.js.git"
   },
   "scripts": {
     "babel": "babel",
-    "build": "babel --compact=true ./lib/novel-support.js -o ./dist/js/index.js -s --no-comments",
-    "watch": "babel ./lib/novel-support.js -w -o ./dist/js/index.js"
+    "build": "npm run build:npm && npm run build:cdn",
+    "build:npm": "babel --compact=true ./src/novel-support.js -o ./dist/js/index.js",
+    "build:cdn": "babel --compact=true ./src/novel-support.js -o ./dist/js/novel-support.js --plugins babel-plugin-transform-remove-export",
+    "watch": "babel ./src/novel-support.js -w -o ./dist/js/index.js"
   }
 }
