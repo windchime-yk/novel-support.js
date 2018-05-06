@@ -31,9 +31,11 @@
   },
   "scripts": {
     "babel": "babel",
-    "build": "npm run build:npm && npm run build:cdn",
+    "sass": "node-sass",
+    "build": "npm run build:npm && npm run build:cdn && npm run build:sass",
     "build:npm": "babel --compact=true ./src/novel-support.js -o ./dist/js/index.js",
     "build:cdn": "babel --compact=true ./src/novel-support.js -o ./dist/js/novel-support.js --plugins babel-plugin-transform-remove-export",
+    "build:sass": "node-sass ./src/_novel-support.scss ./dist/css/novel-support.css --output-style compressed",
     "watch": "babel ./src/novel-support.js -w -o ./dist/js/index.js"
   }
 }
