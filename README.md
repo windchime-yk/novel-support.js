@@ -25,13 +25,20 @@ npm i novel-support.js
 ```
 ### CDN
 ``` html
+<link rel="stylesheet" href="https://unpkg.com/novel-support.js/dist/css/novel-support.css">
+
 <script defer src="https://unpkg.com/novel-support.js/dist/js/novel-support.js"></script>
 ```
 ``` html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/novel-support.js/dist/css/novel-support.css">
+
 <script defer src="https://cdn.jsdelivr.net/npm/novel-support.js/dist/js/novel-support.js"></script>
 ```
 ## 使用方法
 ### npm
+``` scss
+@import "node_modules/novel-support.js/dist/css/novel-support.css"
+```
 ```javascript
 import novelSupport from "novel-support.js";
 
