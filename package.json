@@ -14,7 +14,6 @@
     "node-sass": "^4.9.0"
   },
   "files": [
-    "src",
     "dist",
     "LICENSE.txt",
     "README.md",
