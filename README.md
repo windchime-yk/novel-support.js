@@ -1,4 +1,10 @@
-# novel-support.js(WIP)
+# novel-support.js
+<!-- badge area -->
+[![npm version](https://img.shields.io/npm/v/novel-support.js.svg?style=flat-square)](https://www.npmjs.com/package/novel-support.js)
+[![npm license](https://img.shields.io/npm/l/novel-support.js.svg?style=flat-square)](https://www.npmjs.com/package/novel-support.js)
+[![npm downloads](https://img.shields.io/npm/dm/novel-support.js.svg?style=flat-square)](https://www.npmjs.com/package/novel-support.js)
+[![jsDelivr](https://data.jsdelivr.com/v1/package/npm/novel-support.js/badge)](https://www.jsdelivr.com/package/npm/novel-support.js)
+<!-- /badge area -->
 ## 概要
 このパッケージは、小説投稿サイトで一般に使われているルビ記法や圏点記法をWebサイト上でも使用するために作られました。VanillaJSを使用しており、jQueryは必要ありません。  
 最終目標は、`novelSupport()`で指定したエリアに小説投稿サイトで書いた文章をコピペするだけで、それっぽく表示されることです。
@@ -11,20 +17,31 @@
 その他、いわゆる『小説のお作法』に則った文書の簡易校正機能なども検討しています。  
 今後の実装で変更になる可能性がありますが、字下げのあるなしや圏点の種類についてはCSSで定義しています。使用する際は別途`lib/_novel-support.scss`をご利用ください。
 
-## 使用方法
-### インストール
+## インストール方法
+### npm
 ``` powershell
 npm i novel-support.js
 ```
-### JavaScriptでの使用
-``` JavaScript
-novelSupport('idName');
+### CDN
+``` html
+<script defer src="https://unpkg.com/novel-support.js/dist/js/novel-support.js"></script>
 ```
-or
+``` html
+<script defer src="https://cdn.jsdelivr.net/npm/novel-support.js/dist/js/novel-support.js"></script>
+```
+## 使用方法
+### npm
 ```javascript
-novelSupport('idName', {content: 'text', rewrite: false});  //idNameは任意、第二引数はデフォルト値
+import novelSupport from "novel-support.js";
+
+novelSupport('idName', {content: 'text', rewrite: false});
 ```
 
+### CDN
+```javascript
+novelSupport('idName', {content: 'text', rewrite: false});
+```
+用例のidNameは任意、第二引数はデフォルト値  
 変換箇所の指定はidで行ないます（classは対応していません）  
 `novelSupport('idName')`を複数置いてそれぞれにidを割り振ることで、複数指定も可能です。  
 optionに関しては下記に。
@@ -40,5 +57,9 @@ optionに関しては下記に。
 
 #### rewrite（WIP）
 小説のお作法に則って、『。。。』や『・・・』を『……』に書き換えたり、『！』や『？』のあとに全角空白を入れる簡易的な校正処理です。真偽値で動作し、デフォルトでは無効化されています。まだ実装されてません。  
-将来的にご利用になりたい場合はtrueにしていただければ、実装された際に反映されます。  
+将来的にご利用になりたい場合は`true`にしていただければ、実装された際に反映されます。  
 デフォルト引数：`false`
+
+## リンク
+* [CDNテストページ](https://windchimeyk.github.io/novel-support.js/)
+* [バグ報告](https://github.com/windChimeYK/novel-support.js/issues)
