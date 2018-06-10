@@ -5,7 +5,6 @@
  */
 const novelSupport = (elem, option = {}) => {
   const optionContent = option.content === undefined ? 'text' : option.content;
-  const optionRewrite = option.rewrite === undefined ? false : option.rewrite;
 
   const txtBase = '<p class="ns_indent">$1</p>';
   const rubyBase = '<ruby class="ns_ruby">$1<rt>$2</rt></ruby>';
