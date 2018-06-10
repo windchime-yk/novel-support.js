@@ -16,12 +16,12 @@ const novelSupport = (elem, option = {}) => {
   if (optionContent === 'text') {
     obj = document.getElementById(elem).textContent;
     replaceBody = obj.replace(/(.+?)[\n\r]/g, txtBase)
-                     .replace(/[\|｜](.+?)《(.+?)》/g, rubyBase)
+                     .replace(/[|｜](.+?)《(.+?)》/g, rubyBase)
                      .replace(/《《(.+?)》》/g, emphasisBase);
   }
   else if(optionContent === 'html') {
     obj = document.getElementById(elem).innerHTML;
-    replaceBody = obj.replace(/[\|｜](.+?)《(.+?)》/g, rubyBase)
+    replaceBody = obj.replace(/[|｜](.+?)《(.+?)》/g, rubyBase)
                      .replace(/《《(.+?)》》/g, emphasisBase);
   }
 
