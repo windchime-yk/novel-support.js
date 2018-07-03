@@ -4,7 +4,7 @@
  * @param {object} option
  */
 const novelSupport = (elem, option = {}) => {
-  const optionContent = option.content === undefined ? 'text' : option.content;
+  const optionContent = option.content || 'text';
 
   const txtBase = '<p class="ns_indent">$1</p>';
   const rubyBase = '<ruby class="ns_ruby">$1<rt>$2</rt></ruby>';
