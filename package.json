@@ -7,12 +7,16 @@
     "url": "https://github.com/windChimeYK/novel-support.js/issues"
   },
   "devDependencies": {
+    "autoprefixer": "^9.1.0",
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-remove-export": "^1.0.0",
     "babel-preset-env": "^1.7.0",
+    "cpx": "^1.5.0",
     "lynt": "^0.2.0",
     "node-sass": "^4.9.0",
-    "npm-run-all": "^4.1.3"
+    "npm-run-all": "^4.1.3",
+    "postcss": "^7.0.2",
+    "postcss-cli": "^6.0.0"
   },
   "files": [
     "dist",
@@ -30,13 +34,15 @@
     "url": "git+https://github.com/windChimeYK/novel-support.js.git"
   },
   "scripts": {
-    "babel": "babel",
-    "sass": "node-sass",
+    "watch:js": "babel ./src/novel-support.js -w -o ./dist/js/index.js",
+    "watch:sass": "node-sass ./src/_novel-support.scss ./dist/css/novel-support.css -w --output-style compressed && npm run cpx && npm run autoprefix",
+    "watch": "npm-run-all -p watch:*",
     "build:npm": "babel --compact=true ./src/novel-support.js -o ./dist/js/index.js",
     "build:cdn": "babel --compact=true ./src/novel-support.js -o ./dist/js/novel-support.js --plugins babel-plugin-transform-remove-export",
-    "build:sass": "node-sass ./src/novel-support.scss ./dist/css/novel-support.css --output-style compressed",
+    "build:sass": "node-sass ./src/_novel-support.scss ./dist/css/novel-support.css --output-style compressed && npm run cpx && npm run autoprefix",
     "build": "npm-run-all -p build:*",
-    "watch": "babel ./src/novel-support.js -w -o ./dist/js/index.js",
+    "cpx": "cpx ./src/_novel-support.scss ./dist/css/",
+    "autoprefix": "postcss --use autoprefixer --no-map -o ./dist/css/novel-support.css ./dist/css/novel-support.css",
     "lint": "lynt ./src/novel-support.js"
   }
 }
