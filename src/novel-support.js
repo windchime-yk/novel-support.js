@@ -4,24 +4,27 @@
  * @param {object} option
  */
 const novelSupport = (elem, option = {}) => {
-  const optionContent = option.content === undefined ? 'text' : option.content;
+  const optionContent = option.content || 'text';
 
   const txtBase = '<p class="ns_indent">$1</p>';
+  const txtReg = /(.+?)[\n\r]/g;
   const rubyBase = '<ruby class="ns_ruby">$1<rt>$2</rt></ruby>';
+  const rubyReg = /[|｜](.+?)《(.+?)》/g;
   const emphasisBase = '<strong class="ns_emphasis">$1</strong>';
+  const emphasisReg = /《《(.+?)》》/g;
 
   let obj;
   let replaceBody;
   if (optionContent === 'text') {
     obj = document.getElementById(elem).textContent;
-    replaceBody = obj.replace(/(.+?)[\n\r]/g, txtBase)
-                     .replace(/[|｜](.+?)《(.+?)》/g, rubyBase)
-                     .replace(/《《(.+?)》》/g, emphasisBase);
+    replaceBody = obj.replace(txtReg, txtBase)
+                     .replace(rubyReg, rubyBase)
+                     .replace(emphasisReg, emphasisBase);
   }
   else if(optionContent === 'html') {
     obj = document.getElementById(elem).innerHTML;
-    replaceBody = obj.replace(/[|｜](.+?)《(.+?)》/g, rubyBase)
-                     .replace(/《《(.+?)》》/g, emphasisBase);
+    replaceBody = obj.replace(rubyReg, rubyBase)
+                     .replace(emphasisReg, emphasisBase);
   }
 
   document.getElementById(elem).innerHTML = replaceBody;
