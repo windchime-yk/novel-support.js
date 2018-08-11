@@ -15,7 +15,8 @@
 * ルビ記法（"|《》"のみ）：|卵《たまご》かけご|飯《はん》 => `<ruby class="ns_ruby">卵<rt>たまご</rt></ruby>かけご<ruby class="ns_ruby">飯<rt>はん</rt></ruby>`
 * 圏点記法：《《卵かけご飯》》 => `<strong class="ns_emphasis">卵かけご飯</strong>`
 
-今後の実装で変更になる可能性がありますが、字下げのあるなしや圏点の種類についてはCSSで定義しています。使用する際は別途`dist/novel-support.css`をご利用ください。
+今後の実装で変更になる可能性がありますが、字下げのあるなしや圏点の種類についてはCSSで定義しています。使用する際は**インストール方法**を参考にCSSないしSassファイルを指定してください。  
+現状、LESSやStylusに対応する予定はありません。
 
 ## インストール方法
 ### npm
@@ -26,18 +27,18 @@ npm i novel-support.js
 ``` html
 <link rel="stylesheet" href="https://unpkg.com/novel-support.js/dist/css/novel-support.css">
 
-<script defer src="https://unpkg.com/novel-support.js/dist/js/novel-support.js"></script>
+<script src="https://unpkg.com/novel-support.js/dist/js/novel-support.js"></script>
 ```
 または
 ``` html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/novel-support.js/dist/css/novel-support.css">
 
-<script defer src="https://cdn.jsdelivr.net/npm/novel-support.js/dist/js/novel-support.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/novel-support.js/dist/js/novel-support.js"></script>
 ```
 ## 使用方法
 ### npm
 ``` scss
-@import "node_modules/novel-support.js/dist/css/novel-support.css"
+@import "node_modules/novel-support.js/dist/css/_novel-support.scss"
 ```
 ```javascript
 import novelSupport from "novel-support.js";
