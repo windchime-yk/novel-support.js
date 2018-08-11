@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>novel-support.js</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/brands.css" integrity="sha384-VGCZwiSnlHXYDojsRqeMn3IVvdzTx5JEuHgqZ3bYLCLUBV8rvihHApoA1Aso2TZA" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/fontawesome.css" integrity="sha384-GVa9GOgVQgOk+TNYXu7S/InPTfSDTtBalSgkgqQ7sCik56N9ztlkoTr2f/T44oKV" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/novel-support.js/dist/css/novel-support.css">
+  <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+
+<body>
+  <header role="banner" class="l-header">
+    <div class="l-header__wrapper">
+      <h1 class="l-header__head">
+        <span class="l-header__head-text">novel-support.js</span>
+        <a href="https://github.com/windChimeYK/novel-support.js" class="l-header__head-link"><span class="fab fa-github l-header__head-icon"></span></a>
+      </h1>
+      <p class="l-header__text">小説投稿サイトのルビ短縮記法などを、他のWebサイト上で再現するためのパッケージ</p>
+    </div>
+  </header>
+  <div class="l-container">
+    <main role="main" class="l-main">
+      <section id="content01" class="p-contents">
+        <h2 class="p-contents__head">変換例</h2>
+        <div id="replace">
+          <p>|要石《かなめいし》</p>
+          <p>|卵《たまご》かけご|飯《はん》</p>
+          <p>《《卵かけご飯はお好きかな？》》</p>
+          <ul>
+            <li>|blackout《ブラックアウト》</li>
+            <li>|Noto《ノト》 |Sans《サンス》 |Japanese《ジャパニーズ》</li>
+            <li>|ウリエル《神の火》</li>
+            <li>|炎熱よ彼方の敵を討ち滅ぼせ《Rods from God》！</li>
+          </ul>
+        </div>
+        <div id="ruby">
+          |六波羅探題《ろくはらたんだい》
+          《《|源ノ角《げんのかく》ゴシック》》
+          《《なんということでしょう！》》
+        </div>
+      </section>
+    </main>
+    <nav role="navigation" class="l-nav">
+      <h2 class="l-nav__title">コンテンツ</h2>
+      <ul class="l-nav__list">
+        <li class="l-nav__item">
+          <a href="#content01" class="l-nav__item-link">変換例</a>
+        </li>
+      </ul>
+    </nav>
+    <footer role="contentinfo" class="l-footer">
+      <ul class="l-footer__list">
+        <li class="l-footer__item"><a href="https://github.com/WindChimeYK" class="l-footer__item-link"><span class="fab fa-github l-footer__item-icon"></span></a></li>
+        <li class="l-footer__item"><a href="https://twitter.com/windchime_yk" class="l-footer__item-link"><span class="fab fa-twitter l-footer__item-icon"></span></a></li>
+      </ul>
+      <small class="l-footer__copy">&copy; 2018 WindChimeYK</small>
+    </footer>
+  </div>
+
+  <script src="https://unpkg.com/novel-support.js/dist/js/novel-support.js"></script>
+  <script src="./assets/js/main.js"></script>
+  <script src="./assets/js/user.js"></script>
+</body>
+
+</html>
