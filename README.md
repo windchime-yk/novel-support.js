@@ -65,5 +65,5 @@ optionに関しては下記に。
 デフォルト引数：`text`
 
 ## リンク
-* [CDNテストページ](https://windchimeyk.github.io/novel-support.js/)
-* [バグ報告](https://github.com/windChimeYK/novel-support.js/issues)
+* [CDNテストページ](https://windchime-yk.github.io/novel-support.js/)
+* [バグ報告](https://github.com/windchime-yk/novel-support.js/issues)
