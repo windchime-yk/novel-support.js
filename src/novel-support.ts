@@ -3,7 +3,7 @@
  * @param {string} elem 代替記号の入った文章を入れるタグ
  * @param {object} option パッケージに指定するオプション（[詳細はREADME参照]{@link https://github.com/windchime-yk/novel-support.js#readme}）
  */
-const novelSupport = (elem: string, option: object = {}) => {
+export const novelSupport = (elem: string, option: object = {}) => {
   const optionContent: string = option.content || 'text';
 
   const txtBase: string = '<p class="ns_indent">$1</p>';
@@ -29,5 +29,3 @@ const novelSupport = (elem: string, option: object = {}) => {
 
   document.getElementById(elem).innerHTML = replaceBody;
 }
-
-export {novelSupport};
