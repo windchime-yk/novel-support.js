@@ -3,18 +3,18 @@
  * @param {string} elem 代替記号の入った文章を入れるタグ
  * @param {object} option パッケージに指定するオプション（[詳細はREADME参照]{@link https://github.com/windchime-yk/novel-support.js#readme}）
  */
-const novelSupport = (elem, option = {}) => {
-  const optionContent = option.content || 'text';
+const novelSupport = (elem: string, option: object = {}) => {
+  const optionContent: string = option.content || 'text';
 
-  const txtBase = '<p class="ns_indent">$1</p>';
-  const txtReg = /(.+?)[\n\r]/g;
-  const rubyBase = '<ruby class="ns_ruby">$1<rt>$2</rt></ruby>';
-  const rubyReg = /[|｜](.+?)《(.+?)》/g;
-  const emphasisBase = '<strong class="ns_emphasis">$1</strong>';
-  const emphasisReg = /《《(.+?)》》/g;
+  const txtBase: string = '<p class="ns_indent">$1</p>';
+  const txtReg: RegExp = /(.+?)[\n\r]/g;
+  const rubyBase: string = '<ruby class="ns_ruby">$1<rt>$2</rt></ruby>';
+  const rubyReg: RegExp = /[|｜](.+?)《(.+?)》/g;
+  const emphasisBase: string = '<strong class="ns_emphasis">$1</strong>';
+  const emphasisReg: RegExp = /《《(.+?)》》/g;
 
-  let obj;
-  let replaceBody;
+  let obj: string;
+  let replaceBody: string;
   if (optionContent === 'text') {
     obj = document.getElementById(elem).textContent;
     replaceBody = obj.replace(txtReg, txtBase)
