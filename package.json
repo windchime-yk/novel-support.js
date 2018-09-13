@@ -29,7 +29,7 @@
     "url": "git+https://github.com/windchime-yk/novel-support.js.git"
   },
   "author": "WindChimeYK",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/windchime-yk/novel-support.js/issues"
   },
