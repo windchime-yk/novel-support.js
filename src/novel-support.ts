@@ -1,10 +1,10 @@
 /**
  * 小説投稿サイトで記述した文章をelemで指定したタグ内に入れることで、小説投稿サイトと同じように表示することができるパッケージ
  * @param {string} elem 代替記号の入った文章を入れるタグ
- * @param {object} option パッケージに指定するオプション（[詳細はREADME参照]{@link https://github.com/windchime-yk/novel-support.js#readme}）
+ * @param {string} content 入れる文章にHTMLタグがなければtext、あればhtml
  */
-export const novelSupport = (elem: string, option: object = {}) => {
-  const optionContent: string = option.content || 'text';
+export const novelSupport = (elem: string, {content = 'text'}: {content?: string} = {}) => {
+  const optionContent: string = content;
 
   const Base = {
     txt: '<p class="ns_indent">$1</p>',
