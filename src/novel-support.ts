@@ -6,25 +6,29 @@
 export const novelSupport = (elem: string, option: object = {}) => {
   const optionContent: string = option.content || 'text';
 
-  const txtBase: string = '<p class="ns_indent">$1</p>';
-  const txtReg: RegExp = /(.+?)[\n\r]/g;
-  const rubyBase: string = '<ruby class="ns_ruby">$1<rt>$2</rt></ruby>';
-  const rubyReg: RegExp = /[|｜](.+?)《(.+?)》/g;
-  const emphasisBase: string = '<strong class="ns_emphasis">$1</strong>';
-  const emphasisReg: RegExp = /《《(.+?)》》/g;
+  const Base = {
+    txt: '<p class="ns_indent">$1</p>',
+    ruby: '<ruby class="ns_ruby">$1<rt>$2</rt></ruby>',
+    emphasis: '<strong class="ns_emphasis">$1</strong>'
+  }
+  const Reg = {
+    txt: /(.+?)[\n\r]/g,
+    ruby: /[|｜](.+?)《(.+?)》/g,
+    emphasis: /《《(.+?)》》/g
+  }
 
   let obj: string;
   let replaceBody: string;
   if (optionContent === 'text') {
     obj = document.getElementById(elem).textContent;
-    replaceBody = obj.replace(txtReg, txtBase)
-                     .replace(rubyReg, rubyBase)
-                     .replace(emphasisReg, emphasisBase);
+    replaceBody = obj.replace(Reg.txt, Base.txt)
+                     .replace(Reg.ruby, Base.ruby)
+                     .replace(Reg.emphasis, Base.emphasis);
   }
   else if(optionContent === 'html') {
     obj = document.getElementById(elem).innerHTML;
-    replaceBody = obj.replace(rubyReg, rubyBase)
-                     .replace(emphasisReg, emphasisBase);
+    replaceBody = obj.replace(Reg.ruby, Base.ruby)
+                     .replace(Reg.emphasis, Base.emphasis);
   }
 
   document.getElementById(elem).innerHTML = replaceBody;
