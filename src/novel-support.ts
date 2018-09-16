@@ -3,7 +3,7 @@
  * @param {string} elem 代替記号の入った文章を入れるタグ
  * @param {string} content 入れる文章にHTMLタグがなければtext、あればhtml
  */
-export const novelSupport = (elem: string, {content = 'text'}: {content?: string} = {}) => {
+const novelSupport = (elem: string, {content = 'text'}: {content?: string} = {}) => {
   const optionContent: string = content;
 
   const Base = {
@@ -33,3 +33,5 @@ export const novelSupport = (elem: string, {content = 'text'}: {content?: string
 
   document.getElementById(elem).innerHTML = replaceBody;
 }
+
+export {novelSupport}
