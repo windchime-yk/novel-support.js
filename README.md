@@ -72,8 +72,7 @@ optionに関しては下記に。
 * v1.0.1
   * README.mdのURLのユーザー名を変更
 * v1.1.0
-  * TypeScriptで再記述
-  * パッケージのexportの方法を変更
+  * TypeScriptを採用
   * MITライセンスに変更
   * git tagの追加
 
