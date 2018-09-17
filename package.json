@@ -8,7 +8,7 @@
   "jsdelivr": "./dist/js/novel-support.js",
   "files": [
     "dist",
-    "LICENSE.txt",
+    "LICENSE",
     "README.md",
     "package.json"
   ],
