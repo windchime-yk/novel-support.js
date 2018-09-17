@@ -73,7 +73,7 @@ optionに関しては下記に。
   * README.mdのURLのユーザー名を変更
 * v1.0.2
   * TypeScriptを採用
-  * MITライセンスに変更
+  * ISCライセンスをMITライセンスに変更
   * git tagの追加
 
 ## リンク
