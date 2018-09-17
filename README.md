@@ -64,6 +64,18 @@ optionに関しては下記に。
 パッケージの関数が指定したタグ内に入っているのが単なる文字列の場合は`text`、タグを含むHTMLなら`html`と記述します。`text`と記述した場合は全ての変換処理が行なわれますが、`html`の場合は字下げつき段落づけは行なわれません。  
 デフォルト引数：`text`
 
+## 過去の変更点
+* v0.0.3
+* v0.0.4
+* v1.0.0
+  * メンテナンス環境を整備
+* v1.0.1
+  * README.mdのURLのユーザー名を変更
+* v1.0.2
+  * TypeScriptを採用
+  * ISCライセンスをMITライセンスに変更
+  * git tagの追加
+
 ## リンク
-* [CDNテストページ](https://windchimeyk.github.io/novel-support.js/)
-* [バグ報告](https://github.com/windChimeYK/novel-support.js/issues)
+* [CDNテストページ](https://windchime-yk.github.io/novel-support.js/)
+* [バグ報告](https://github.com/windchime-yk/novel-support.js/issues)
