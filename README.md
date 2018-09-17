@@ -71,7 +71,7 @@ optionに関しては下記に。
   * メンテナンス環境を整備
 * v1.0.1
   * README.mdのURLのユーザー名を変更
-* v1.1.0
+* v1.0.2
   * TypeScriptを採用
   * MITライセンスに変更
   * git tagの追加
