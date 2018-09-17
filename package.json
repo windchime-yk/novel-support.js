@@ -13,11 +13,11 @@
     "package.json"
   ],
   "scripts": {
-    "watch:js": "babel ./src/novel-support.ts -w -o ./dist/js/index.js",
+    "watch:js": "tsc ./src/index.ts --outDir ./dist/js/ -w",
     "watch:sass": "node-sass ./src/_novel-support.scss ./dist/css/novel-support.css -w --output-style compressed && npm run cpx && npm run autoprefix",
     "watch": "npm-run-all -p watch:*",
-    "build:npm": "babel --compact=true ./src/novel-support.ts -o ./dist/js/index.js",
-    "build:cdn": "babel --compact=true ./src/novel-support.ts -o ./dist/js/novel-support.js --plugins babel-plugin-transform-remove-export",
+    "build:npm": "tsc ./src/index.ts --outDir ./dist/js/ -d",
+    "build:cdn": "babel --compact=true ./src/index.ts -o ./dist/js/novel-support.js --plugins babel-plugin-transform-remove-export",
     "build:sass": "node-sass ./src/_novel-support.scss ./dist/css/novel-support.css --output-style compressed && npm run cpx && npm run autoprefix",
     "build": "npm-run-all -p build:*",
     "cpx": "cpx ./src/_novel-support.scss ./dist/css/",
