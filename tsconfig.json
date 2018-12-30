@@ -2,13 +2,16 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
-    "lib": ["es6"],
-    "declaration": true,
+    "lib": ["es5", "es6", "dom"],
+    "outDir": "./dist/js/",
     "noImplicitAny": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "esModuleInterop": true
   },
+  "files": [
+    "./src/index.ts"
+  ],
   "exclude": [
     "node_modules"
   ]
