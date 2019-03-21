@@ -60,7 +60,7 @@ novelSupport('idName or className', {content: 'html'});
 ```
 
 ### オプション
-`novelSupport()`の第二引数ではオプションを指定する。デフォルト引数で問題ない場合は、`idName`だけで問題ない。  
+`novelSupport()`の第二引数ではオプションを指定する。デフォルト引数で問題ない場合は、`idName`か`className`だけで問題ない。  
 現在、設定できるオプションは以下。
 
 #### content
