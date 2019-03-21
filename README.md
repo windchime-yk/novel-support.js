@@ -4,6 +4,8 @@
 [![npm license](https://img.shields.io/npm/l/novel-support.js.svg?style=flat-square)](https://www.npmjs.com/package/novel-support.js)
 [![npm downloads - month](https://img.shields.io/npm/dm/novel-support.js.svg?style=flat-square)](https://www.npmjs.com/package/novel-support.js)
 [![npm downloads - total](https://img.shields.io/npm/dt/novel-support.js.svg?style=flat-square)](https://www.npmjs.com/package/novel-support.js)
+[![Maintainability](https://api.codeclimate.com/v1/badges/2f3d7a337ed46acbc2eb/maintainability)](https://codeclimate.com/github/windchime-yk/novel-support.js/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/2f3d7a337ed46acbc2eb/test_coverage)](https://codeclimate.com/github/windchime-yk/novel-support.js/test_coverage)
 [![jsDelivr](https://data.jsdelivr.com/v1/package/npm/novel-support.js/badge)](https://www.jsdelivr.com/package/npm/novel-support.js)
 <!-- /badge area -->
 ## 概要
