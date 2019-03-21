@@ -17,9 +17,9 @@
 * class属性で一括指定可能
 * Sassでスタイル管理しているためCSSの変更が容易
 * 小説投稿サイトにあるような独自記法をHTMLに変換
-  * **字下げつき段落づけ**：卵かけご飯`\n` => `<p class="ns_indent">`卵かけご飯`</p>`
-  * **ルビ記法（`|《》`と`｜《》`）**：`|`卵`《`たまご`》`かけご`|`飯`《`はん`》` => `<ruby class="ns_ruby">`卵`<rt>`たまご`</rt></ruby>`かけご`<ruby class="ns_ruby">`飯`<rt>`はん`</rt></ruby>`
-  * **圏点記法**：`《《`卵かけご飯`》》` => `<strong class="ns_emphasis">`卵かけご飯`</strong>`
+  * 字下げつき段落づけ：卵かけご飯 => `<p class="ns_indent">卵かけご飯</p>`
+  * ルビ記法（|《》｜《》）：|卵《たまご》かけご|飯《はん》 => `<ruby class="ns_ruby">卵<rt>たまご</rt></ruby>かけご<ruby class="ns_ruby">飯<rt>はん</rt></ruby>`
+  * 圏点記法：《《卵かけご飯》》 => `<strong class="ns_emphasis">卵かけご飯</strong>`
 
 ## 使用方法
 ### npmの場合
