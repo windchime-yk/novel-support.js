@@ -5,3 +5,9 @@
 <script defer src="https://cdn.jsdelivr.net/npm/novel-support.js/dist/js/novel-support.min.js"></script>
 <script defer src="https://resources.whyk.dev/js/ns-jimdo-setup.js"></script>
 ```
+
+そのあと、投稿内容で使われているルビタグの一つを|《》に書き換えて更新をしてください
+その部分がルビとして表示されれば導入は完了です
+
+ルビの設定は、下記ドキュメントの`特徴`の部分を読んでもらうとわかりやすいかもしれません
+https://github.com/windchime-yk/novel-support.js/tree/develop/#readme
