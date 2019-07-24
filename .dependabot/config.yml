@@ -8,4 +8,8 @@ update_configs:
     - "dependencies"
     - "dependabot"
     - "env"
+    automerged_updates:
+    - match:
+        dependency_type: "all"
+        update_type: "all"
     version_requirement_updates: "auto"
