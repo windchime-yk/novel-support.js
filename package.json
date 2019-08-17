@@ -22,7 +22,8 @@
     "build": "npm-run-all -p build:*",
     "cpx": "cpx ./src/_novel-support.scss ./dist/css/",
     "autoprefix": "postcss --use autoprefixer --no-map -o ./dist/css/novel-support.css ./dist/css/novel-support.css",
-    "lint": "lynt ./src/index.ts --typescript --fix"
+    "lint": "lynt ./src/index.ts --typescript --fix",
+    "precommit": "lint-staged"
   },
   "repository": {
     "type": "git",
@@ -34,6 +35,13 @@
     "url": "https://github.com/windchime-yk/novel-support.js/issues"
   },
   "homepage": "https://github.com/windchime-yk/novel-support.js#readme",
+  "lint-staged": {
+    "src/index.ts": [
+      "tsc --noEmit",
+      "lynt ./src/index.ts --typescript --fix",
+      "git add"
+    ]
+  },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.3",
