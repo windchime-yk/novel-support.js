@@ -13,27 +13,35 @@
     "package.json"
   ],
   "scripts": {
-    "watch:js": "tsc ./src/index.ts --outDir ./dist/js/ -w",
+    "watch:js": "tsc -w -p ./tsconfig.json",
     "watch:sass": "node-sass ./src/_novel-support.scss ./dist/css/novel-support.css -w --output-style compressed && npm run cpx && npm run autoprefix",
     "watch": "npm-run-all -p watch:*",
-    "build:npm": "tsc ./src/index.ts --outDir ./dist/js/ -d",
+    "build:npm": "tsc -p ./tsconfig.build.json",
     "build:cdn": "babel --compact=true ./src/index.ts -o ./dist/js/novel-support.js --plugins babel-plugin-transform-remove-export",
     "build:sass": "node-sass ./src/_novel-support.scss ./dist/css/novel-support.css --output-style compressed && npm run cpx && npm run autoprefix",
     "build": "npm-run-all -p build:*",
     "cpx": "cpx ./src/_novel-support.scss ./dist/css/",
     "autoprefix": "postcss --use autoprefixer --no-map -o ./dist/css/novel-support.css ./dist/css/novel-support.css",
-    "lint": "lynt ./src/novel-support.js"
+    "lint": "lynt ./src/index.ts --typescript --fix",
+    "precommit": "lint-staged"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/windchime-yk/novel-support.js.git"
   },
-  "author": "WindChimeYK",
+  "author": "WhyK",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/windchime-yk/novel-support.js/issues"
   },
   "homepage": "https://github.com/windchime-yk/novel-support.js#readme",
+  "lint-staged": {
+    "src/index.ts": [
+      "tsc --noEmit",
+      "lynt ./src/index.ts --typescript --fix",
+      "git add"
+    ]
+  },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
@@ -44,6 +52,7 @@
     "autoprefixer": "^9.1.0",
     "babel-plugin-transform-remove-export": "^1.0.0",
     "cpx": "^1.5.0",
+    "jest": "^24.1.0",
     "lynt": "^0.2.0",
     "node-sass": "^4.9.3",
     "npm-run-all": "^4.1.3",
