@@ -3,11 +3,13 @@ update_configs:
   - package_manager: "javascript"
     directory: "/"
     update_schedule: "live"
-    target_branch: "develop"
+    target_branch: "master"
+    allowed_updates:
+    - match:
+        update_type: "security"
     default_labels:
-    - "dependencies"
-    - "dependabot"
-    - "env"
+    - "Type: Security"
+    - "Type: Environment"
     automerged_updates:
     - match:
         dependency_type: "all"
