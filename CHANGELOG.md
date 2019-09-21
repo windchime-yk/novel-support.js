@@ -23,4 +23,7 @@
 
 ## v1.1.0
   * class属性に対応
-  * あたっていなかったtsconfig.jsonを適用
+  * idとclass属性両方の対応のため、取得方法を`querySelectorAll`に変更
+  * `content`を`type`に変更し、Objectを廃止
+  * あたっていなかった型定義ファイルを適用
+  * `import`の方法を修正
