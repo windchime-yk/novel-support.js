@@ -1,5 +1,4 @@
-import { novelSupport } from '../src/index';
-
+import novelSupport from '../src/index';
 
 describe('novelSupport', () => {
   test('idでの指定で動作するか', () => {
@@ -47,7 +46,7 @@ describe('novelSupport', () => {
     </div>
     `;
   
-    novelSupport('.novel', {content: 'html'});
+    novelSupport('.novel', 'html');
   
     expect(document.querySelector('.novel').innerHTML).toEqual('\n      <ruby class="ns_ruby">卵<rt>たまご</rt></ruby>かけご<ruby class="ns_ruby">飯<rt>はん</rt></ruby>\n      <strong class="ns_emphasis">なんということでしょう</strong>\n    ');
   })
