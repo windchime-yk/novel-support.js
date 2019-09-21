@@ -9,14 +9,14 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/2f3d7a337ed46acbc2eb/test_coverage)](https://codeclimate.com/github/windchime-yk/novel-support.js/test_coverage)
 <!-- /badge area -->
 ## 概要
-このパッケージは、Webサイト上で小説投稿サイトの独自記法を使うために開発されました。  
+このパッケージは、小説投稿サイトにある独自記法をWebサイト上で気軽に使うためのパッケージです。  
 最終目標は、このパッケージを使うだけで、小説投稿サイトからコピペした文章をそれっぽく表示させられるようにすることです。
 
 ## 特徴
 * jQuery不要
 * class属性で一括指定可能
 * Sassでスタイル管理しているためCSSの変更が容易
-* 小説投稿サイトにあるような独自記法をHTMLに変換
+* 小説投稿サイトにあるような独自記法を含んだテキストを下記のように変換
   * 字下げつき段落づけ：卵かけご飯 => `<p class="ns_indent">卵かけご飯</p>`
   * ルビ記法（|《》｜《》）：|卵《たまご》かけご|飯《はん》 => `<ruby class="ns_ruby">卵<rt>たまご</rt></ruby>かけご<ruby class="ns_ruby">飯<rt>はん</rt></ruby>`
   * 圏点記法：《《卵かけご飯》》 => `<strong class="ns_emphasis">卵かけご飯</strong>`
@@ -24,7 +24,7 @@
 ## 使用方法
 ### npmの場合
 #### インストール
-``` powershell
+```
 npm i novel-support.js
 ```
 
@@ -35,11 +35,15 @@ npm i novel-support.js
 ```javascript
 import novelSupport from "novel-support.js";
 
-novelSupport('idName or className', {content: 'html'}); // contentがtextの場合は省略可能（詳しくは後述）
+novelSupport('#id', 'html');
+// または
+novelSupport('.class', 'html');
+
+// 'html'は省略可能（オプションで詳述）
 ```
 
 ### CDNの場合
-unpkgとjsDelivrにて提供。どちらを使っても問題ない。
+unpkgとjsDelivrにて提供。
 
 #### CDN設置
 ``` html
@@ -56,17 +60,22 @@ unpkgとjsDelivrにて提供。どちらを使っても問題ない。
 
 #### 動作準備
 ```javascript
-novelSupport('idName or className', {content: 'html'});
+novelSupport('#id', 'html');
+// または
+novelSupport('.class', 'html');
 ```
 
 ### オプション
-`novelSupport()`の第二引数ではオプションを指定する。デフォルト引数で問題ない場合は、`idName`か`className`だけで問題ない。  
-現在、設定できるオプションは以下。
+`novelSupport()`の第二引数では`type`を指定します。
 
-#### content
-`novelSupport()`の第一引数で指定されたタグ内に入っているのが単なる文字列の場合は`text`、タグを含むHTMLなら`html`と記述する。  
-`text`と記述した場合はすべての変換処理が行なわれるが、`html`の場合は字下げつき段落づけが行なわれない。  
-デフォルト引数：`text`
+変換対象がHTMLタグを含むなら`html`と記述。何も記述しない場合は、デフォルト引数の`text`が適用されます。  
+`text`の場合はすべての変換処理が行なわれ、`html`の場合は字下げつき段落づけが行なわれません。
+
+## テスト
+```
+npm i
+npm run test
+```
 
 ## 過去の変更点
 [CHANGELOG.md](./CHANGELOG.md)
