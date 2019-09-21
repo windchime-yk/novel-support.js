@@ -3,7 +3,7 @@
   "description": "jQuery非依存の、小説投稿サイト代替記号の変換ライブラリ",
   "version": "1.0.2",
   "main": "./dist/js/index.js",
-  "types": "/dist/js/index.d.ts",
+  "types": "./dist/js/index.d.ts",
   "unpkg": "./dist/js/novel-support.js",
   "jsdelivr": "./dist/js/novel-support.js",
   "files": [
