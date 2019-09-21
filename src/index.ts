@@ -39,4 +39,4 @@ const novelSupport = (elem: string, type?: string) => {
   })
 }
 
-export {novelSupport}
+export default novelSupport
