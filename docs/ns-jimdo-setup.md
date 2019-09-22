@@ -12,5 +12,5 @@
 そのあと、投稿内容で使われているルビタグの一つを|《》に書き換えて更新をしてください  
 その部分がルビとして表示されれば導入は完了です
 
-ルビの書き換え方は、下記ドキュメントの『特徴』にある『小説投稿サイトにあるような独自記法をHTMLに変換』の項を読んでもらうとわかりやすいかもしれません
-https://github.com/windchime-yk/novel-support.js/tree/develop/#readme
+ルビの書き換え方は、下記ドキュメントの『特徴』にある『小説投稿サイトにあるような独自記法をHTMLに変換』の項を読んでもらうとわかりやすいかもしれません  
+https://github.com/windchime-yk/novel-support.js/#readme
