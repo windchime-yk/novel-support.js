@@ -71,6 +71,14 @@ novelSupport('.class', {content: 'html'});
 変換対象がHTMLタグを含むなら`{content: 'html'}`と記述。何も記述しない場合は、デフォルト引数の`{content: 'text'}`が適用されます。  
 `{content: 'text'}`の場合はすべての変換処理が行なわれ、`{content: 'html'}`の場合は字下げつき段落づけが行なわれません。
 
+## 動作確認ブラウザ（npmのみ）
+### macOS Mojave v10.14.6
+- Google Chrome v77
+- Mozilla Firefox Quantum v69
+- Apple Safari v13
+- Microsoft Edge Chromium Beta v78
+- Opera v63
+
 ## テスト
 ```
 npm i
