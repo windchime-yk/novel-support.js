@@ -35,11 +35,11 @@ npm i novel-support.js
 ```javascript
 import novelSupport from "novel-support.js";
 
-novelSupport('#id', 'html');
+novelSupport('#id', {content: 'html'});
 // または
-novelSupport('.class', 'html');
+novelSupport('.class', {content: 'html'});
 
-// 'html'は省略可能（オプションで詳述）
+// {content: 'html'}は省略可能（オプションで詳述）
 ```
 
 ### CDNの場合
@@ -60,16 +60,16 @@ unpkgとjsDelivrにて提供。
 
 #### 動作準備
 ```javascript
-novelSupport('#id', 'html');
+novelSupport('#id', {content: 'html'});
 // または
-novelSupport('.class', 'html');
+novelSupport('.class', {content: 'html'});
 ```
 
 ### オプション
-`novelSupport()`の第二引数では`type`を指定します。
+`novelSupport()`の第二引数には、`{content}`を指定できます。
 
-変換対象がHTMLタグを含むなら`html`と記述。何も記述しない場合は、デフォルト引数の`text`が適用されます。  
-`text`の場合はすべての変換処理が行なわれ、`html`の場合は字下げつき段落づけが行なわれません。
+変換対象がHTMLタグを含むなら`{content: 'html'}`と記述。何も記述しない場合は、デフォルト引数の`{content: 'text'}`が適用されます。  
+`{content: 'text'}`の場合はすべての変換処理が行なわれ、`{content: 'html'}`の場合は字下げつき段落づけが行なわれません。
 
 ## テスト
 ```
