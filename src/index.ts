@@ -1,10 +1,13 @@
 /**
  * 小説投稿サイトで記述した文章をelemで指定したタグ内に入れることで、小説投稿サイトと同じように表示することができるパッケージ
  * @param {string} elem 代替記号の入った文章を入れるタグ
- * @param {string} [type=text] 代替記号の入った文章にHTMLタグが入っていればhtml、なければtext（デフォルトはtext）
+ * @param {string} [content=text] 代替記号の入った文章にHTMLタグが入っていればhtml、なければtext（デフォルトはtext）
  */
-const novelSupport = (elem: string, type?: string) => {
-  const option = type || 'text';
+interface Option {
+  content?: string
+}
+
+const novelSupport = (elem: string, {content = 'text'}: Option = {}) => {
 
   const Base = {
     txt: '<p class="ns_indent">$1</p>',
@@ -23,13 +26,13 @@ const novelSupport = (elem: string, type?: string) => {
     let obj: string;
     let replaceBody: string;
 
-    if (option === 'text') {
+    if (content === 'text') {
       obj = element.textContent;
       replaceBody = obj.replace(Reg.txt, Base.txt)
                        .replace(Reg.ruby, Base.ruby)
                        .replace(Reg.emphasis, Base.emphasis);
     }
-    else if(option === 'html') {
+    else if(content === 'html') {
       obj = element.innerHTML;
       replaceBody = obj.replace(Reg.ruby, Base.ruby)
                        .replace(Reg.emphasis, Base.emphasis);

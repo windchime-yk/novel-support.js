@@ -46,7 +46,7 @@ describe('novelSupport', () => {
     </div>
     `;
   
-    novelSupport('.novel', 'html');
+    novelSupport('.novel', {content: 'html'});
   
     expect(document.querySelector('.novel').innerHTML).toEqual('\n      <ruby class="ns_ruby">卵<rt>たまご</rt></ruby>かけご<ruby class="ns_ruby">飯<rt>はん</rt></ruby>\n      <strong class="ns_emphasis">なんということでしょう</strong>\n    ');
   })
