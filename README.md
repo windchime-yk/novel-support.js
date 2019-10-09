@@ -25,6 +25,10 @@
 ### npmの場合
 #### インストール
 ```
+yarn add novel-support.js
+```
+または
+```
 npm i novel-support.js
 ```
 
@@ -81,8 +85,8 @@ novelSupport('.class', {content: 'html'});
 
 ## テスト
 ```
-npm i
-npm run test
+yarn
+yarn test
 ```
 
 ## 過去の変更点
