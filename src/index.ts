@@ -22,7 +22,8 @@ const novelSupport = (elem: string, {content = 'text'}: Option = {}) => {
 
   const elemList = document.querySelectorAll(elem);
 
-  elemList.forEach((element) => {
+  for (let i = 0; i < elemList.length; i++) {
+    const element = elemList[i];
     let obj: string;
     let replaceBody: string;
 
@@ -39,7 +40,7 @@ const novelSupport = (elem: string, {content = 'text'}: Option = {}) => {
     }
 
     element.innerHTML = replaceBody;
-  })
+  }
 }
 
 export default novelSupport
