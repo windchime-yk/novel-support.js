@@ -22,7 +22,7 @@
   * 圏点記法：《《卵かけご飯》》 => `<strong class="ns_emphasis">卵かけご飯</strong>`
 
 ## 使用方法
-### npmの場合
+### yarn（またはnpm）の場合
 #### インストール
 ```
 yarn add novel-support.js
@@ -87,6 +87,11 @@ novelSupport('.class', {content: 'html'});
 ```
 yarn
 yarn test
+```
+または
+```
+npm i
+npm test
 ```
 
 ## 過去の変更点
