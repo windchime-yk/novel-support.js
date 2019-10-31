@@ -77,11 +77,11 @@ novelSupport('.class', {content: 'html'});
 
 ## 動作確認ブラウザ（npmのみ）
 ### macOS Mojave v10.14.6
-- Google Chrome v77
-- Mozilla Firefox Quantum v69
+- Google Chrome v78
+- Mozilla Firefox Quantum v70
 - Apple Safari v13
 - Microsoft Edge Chromium Beta v78
-- Opera v63
+- Opera v64
 
 ## テスト
 ```
