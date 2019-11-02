@@ -83,6 +83,14 @@ novelSupport('.class', {content: 'html'});
 - Microsoft Edge Chromium Beta v78
 - Opera v64
 
+### Windows10 Home v1903
+- Google Chrome v78
+- Mozilla Firefox Quantum v70
+- Microsoft Edge v44 (※1)
+- Microsoft Internet Explorer v11 (※1)
+
+※1：ルビ記法のみサポート
+
 ## テスト
 ```
 yarn
