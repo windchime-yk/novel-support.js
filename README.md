@@ -5,25 +5,51 @@
 [![npm downloads - month](https://img.shields.io/npm/dm/novel-support.js.svg?style=flat-square)](https://www.npmjs.com/package/novel-support.js)
 [![npm downloads - total](https://img.shields.io/npm/dt/novel-support.js.svg?style=flat-square)](https://www.npmjs.com/package/novel-support.js)
 [![jsDelivr](https://data.jsdelivr.com/v1/package/npm/novel-support.js/badge)](https://www.jsdelivr.com/package/npm/novel-support.js)
+[![Maintainability](https://api.codeclimate.com/v1/badges/2f3d7a337ed46acbc2eb/maintainability)](https://codeclimate.com/github/windchime-yk/novel-support.js/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/2f3d7a337ed46acbc2eb/test_coverage)](https://codeclimate.com/github/windchime-yk/novel-support.js/test_coverage)
 <!-- /badge area -->
 ## 概要
-このパッケージは、小説投稿サイトで一般に使われているルビ記法や圏点記法をWebサイト上でも使用するために作られました。VanillaJSを使用しており、jQueryは必要ありません。  
-最終目標は、`novelSupport()`で指定したエリアに小説投稿サイトで書いた文章をコピペするだけで、それっぽく表示されることです。
+このパッケージは、小説投稿サイトにある独自記法をWebサイト上で気軽に使うためのパッケージです。  
+最終目標は、このパッケージを使うだけで、小説投稿サイトからコピペした文章をそれっぽく表示させられるようにすることです。
 
-利用可能な記法は以下。
-* 字下げつき段落づけ：卵かけご飯\n => `<p class="ns_indent">卵かけご飯</p>`
-* ルビ記法（"|《》"のみ）：|卵《たまご》かけご|飯《はん》 => `<ruby class="ns_ruby">卵<rt>たまご</rt></ruby>かけご<ruby class="ns_ruby">飯<rt>はん</rt></ruby>`
-* 圏点記法：《《卵かけご飯》》 => `<strong class="ns_emphasis">卵かけご飯</strong>`
+## 特徴
+- jQuery不要
+- class属性で一括指定可能
+- Sassでスタイル管理しているためCSSの変更が容易
+- 小説投稿サイトにあるような独自記法を含んだテキストを下記のように変換
+  - 字下げつき段落づけ：卵かけご飯 => `<p class="ns_indent">卵かけご飯</p>`
+  - ルビ記法（|《》｜《》）：|卵《たまご》かけご|飯《はん》 => `<ruby class="ns_ruby">卵<rt>たまご</rt></ruby>かけご<ruby class="ns_ruby">飯<rt>はん</rt></ruby>`
+  - 圏点記法：《《卵かけご飯》》 => `<strong class="ns_emphasis">卵かけご飯</strong>`
 
-今後の実装で変更になる可能性がありますが、字下げのあるなしや圏点の種類についてはCSSで定義しています。使用する際は**インストール方法**を参考にCSSないしSassファイルを指定してください。  
-現状、LESSやStylusに対応する予定はありません。
-
-## インストール方法
-### npm
-``` powershell
+## 使用方法
+### yarn（またはnpm）の場合
+#### インストール
+```
+yarn add novel-support.js
+```
+または
+```
 npm i novel-support.js
 ```
-### CDN
+
+#### 動作準備
+``` scss
+@import "node_modules/novel-support.js/dist/css/_novel-support.scss"
+```
+```javascript
+import novelSupport from "novel-support.js";
+
+novelSupport('#id', {content: 'html'});
+// または
+novelSupport('.class', {content: 'html'});
+
+// {content: 'html'}は省略可能（オプションで詳述）
+```
+
+### CDNの場合
+unpkgとjsDelivrにて提供。
+
+#### CDN設置
 ``` html
 <link rel="stylesheet" href="https://unpkg.com/novel-support.js/dist/css/novel-support.css">
 
@@ -35,46 +61,52 @@ npm i novel-support.js
 
 <script src="https://cdn.jsdelivr.net/npm/novel-support.js/dist/js/novel-support.js"></script>
 ```
-## 使用方法
-### npm
-``` scss
-@import "node_modules/novel-support.js/dist/css/_novel-support.scss"
-```
-```javascript
-import novelSupport from "novel-support.js";
 
-novelSupport('idName', {content: 'text'});
-```
-
-### CDN
+#### 動作準備
 ```javascript
-novelSupport('idName', {content: 'text'});
+novelSupport('#id', {content: 'html'});
+// または
+novelSupport('.class', {content: 'html'});
 ```
-用例のidNameは任意、第二引数はデフォルト値  
-変換箇所の指定はidで行ないます（classは対応していません）  
-`novelSupport('idName')`を複数置いてそれぞれにidを割り振ることで、複数指定も可能です。  
-optionに関しては下記に。
 
 ### オプション
-関数式の第二引数にはObjectが入っています。  
-現在、設定されているオプションは以下になります。
-デフォルト引数で問題ない場合は、`idName`だけで問題ないです。
+`novelSupport()`の第二引数には、`{content}`を指定できます。
 
-#### content
-パッケージの関数が指定したタグ内に入っているのが単なる文字列の場合は`text`、タグを含むHTMLなら`html`と記述します。`text`と記述した場合は全ての変換処理が行なわれますが、`html`の場合は字下げつき段落づけは行なわれません。  
-デフォルト引数：`text`
+変換対象がHTMLタグを含むなら`{content: 'html'}`と記述。何も記述しない場合は、デフォルト引数の`{content: 'text'}`が適用されます。  
+`{content: 'text'}`の場合はすべての変換処理が行なわれ、`{content: 'html'}`の場合は字下げつき段落づけが行なわれません。
+
+## 動作確認ブラウザ（npmのみ）
+### macOS Mojave v10.14.6
+- Google Chrome v78
+- Mozilla Firefox Quantum v70
+- Apple Safari v13
+- Microsoft Edge Chromium Beta v78
+- Opera v64
+
+### Windows10 Home v1903
+- Google Chrome v78
+- Mozilla Firefox Quantum v70
+- Microsoft Edge v44 (※1)
+- Microsoft Internet Explorer v11 (※1)
+
+※1：ルビ記法のみサポート
+
+## テスト
+```
+yarn
+yarn test
+```
+または
+```
+npm i
+npm test
+```
 
 ## 過去の変更点
-* v0.0.3
-* v0.0.4
-* v1.0.0
-  * メンテナンス環境を整備
-* v1.0.1
-  * README.mdのURLのユーザー名を変更
-* v1.0.2
-  * TypeScriptを採用
-  * ISCライセンスをMITライセンスに変更
-  * git tagの追加
+[CHANGELOG.md](./CHANGELOG.md)
+
+## ライセンス
+[MIT](./LICENSE)
 
 ## リンク
 * [CDNテストページ](https://windchime-yk.github.io/novel-support.js/)
