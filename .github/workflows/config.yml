@@ -19,11 +19,12 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: 
-        - actions/setup-node@v1
-        - borales/actions-yarn@v2.0.0
+      uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - name: Use Yarn
+      uses: borales/actions-yarn@v2.0.0
+      with:
         cmd: install
     - name: Test(pull request)
       if: github.event_name == 'pull_request'
