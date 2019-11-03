@@ -22,10 +22,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Use Yarn
-      uses: borales/actions-yarn@v2.0.0
-      with:
-        cmd: install
     - name: Test(pull request)
       if: github.event_name == 'pull_request'
       run: yarn test
