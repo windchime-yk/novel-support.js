@@ -1,8 +1,11 @@
 name: Node CI
 
 on:
+  push:
+    branches:
+      - master
   pull_request:
-    types: synchronize
+    types: [opened, synchronize]
 
 jobs:
   build:
@@ -19,9 +22,20 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: npm install,  test
-      run: |
-        npm install
-        npm test
+    - name: Use Yarn
+      uses: borales/actions-yarn@v2.0.0
+      with:
+        cmd: install
+    - name: Test(pull request)
+      if: github.event_name == 'pull_request'
+      run: yarn test
       env:
         CI: true
+    - name: Test(Mergh master branch) & Publish code coverage
+      if: github.event_name == 'push'
+      uses: paambaati/codeclimate-action@v2.3.0
+      env:
+        CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+      with:
+        coverageCommand: yarn coverage
+        debug: true
