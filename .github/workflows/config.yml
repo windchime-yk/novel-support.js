@@ -5,7 +5,7 @@ on:
     branches:
       - master
   pull_request:
-    types: synchronize
+    types: [opened, synchronize]
 
 jobs:
   build:
@@ -19,17 +19,19 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Use Node.js ${{ matrix.node-version }}
+      if: github.event_name == 'pull_request'
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
     - name: npm install, test
+      if: github.event_name == 'pull_request'
       run: |
         npm install
         npm test
       env:
         CI: true
     - name: Test & publish code coverage
-      if: github.event.name == 'push'
+      if: github.event_name == 'push'
       uses: paambaati/codeclimate-action@v2.3.0
       env:
         CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
