@@ -25,7 +25,7 @@
     "lint": "lynt ./src/index.ts --typescript --fix",
     "precommit": "lint-staged",
     "test": "jest",
-    "coverage": "rimraf coverage/ && npm test -- --coverage"
+    "coverage": "rimraf coverage/ && yarn test --coverage"
   },
   "repository": {
     "type": "git",
