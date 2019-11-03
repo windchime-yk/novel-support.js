@@ -23,7 +23,6 @@
     "cpx": "cpx ./src/_novel-support.scss ./dist/css/",
     "autoprefix": "postcss --use autoprefixer --no-map -o ./dist/css/novel-support.css ./dist/css/novel-support.css",
     "lint": "lynt ./src/index.ts --typescript --fix",
-    "precommit": "lint-staged",
     "test": "jest",
     "coverage": "rimraf coverage/ && yarn test --coverage"
   },
@@ -37,12 +36,10 @@
     "url": "https://github.com/windchime-yk/novel-support.js/issues"
   },
   "homepage": "https://github.com/windchime-yk/novel-support.js#readme",
-  "lint-staged": {
-    "src/index.ts": [
-      "tsc --noEmit",
-      "lynt ./src/index.ts --typescript --fix",
-      "git add"
-    ]
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsc --noEmit && lynt ./src/index.ts --typescript --fix && git add"
+    }
   },
   "jest": {
     "moduleFileExtensions": [
@@ -70,6 +67,7 @@
     "autoprefixer": "^9.1.0",
     "babel-plugin-transform-remove-export": "^1.0.0",
     "cpx": "^1.5.0",
+    "husky": "^3.0.9",
     "jest": "^24.1.0",
     "lynt": "^0.2.0",
     "node-sass": "^4.9.3",
