@@ -1,2 +1,2 @@
-novelSupport('replace', {'content': 'html'});
-novelSupport('ruby');
+novelSupport('#replace', {'content': 'html'});
+novelSupport('#ruby');
