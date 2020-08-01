@@ -15,7 +15,7 @@
   "scripts": {
     "build:npm": "tsc -p ./tsconfig.build.json",
     "build:cdn": "babel --compact=true ./src/index.ts -o ./dist/js/novel-support.js --plugins babel-plugin-transform-remove-export",
-    "build:sass": "node-sass ./src/_novel-support.scss ./dist/css/novel-support.css --output-style compressed && yarn cpx && yarn autoprefix",
+    "build:sass": "sass ./src/_novel-support.scss ./dist/css/novel-support.css --style=compressed && yarn cpx && yarn autoprefix",
     "build": "run-s build:*",
     "cpx": "cpx ./src/_novel-support.scss ./dist/css/",
     "autoprefix": "postcss --use autoprefixer --no-map -o ./dist/css/novel-support.css ./dist/css/novel-support.css",
@@ -72,12 +72,12 @@
     "eslint-plugin-prettier": "^3.1.4",
     "husky": "^3.0.9",
     "jest": "^24.1.0",
-    "node-sass": "^4.9.3",
     "npm-run-all": "^4.1.3",
     "postcss": "^7.0.2",
     "postcss-cli": "^6.0.0",
     "prettier": "^2.0.5",
     "rimraf": "^3.0.0",
+    "sass": "^1.26.10",
     "ts-jest": "^24.1.0",
     "typescript": "^3.9.7"
   }
