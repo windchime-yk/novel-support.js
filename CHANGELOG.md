@@ -26,3 +26,8 @@
   - idとclass属性両方の対応のため、取得方法を`querySelectorAll`に変更
   - あたっていなかった型定義ファイルを適用
   - `import`の方法を修正
+
+## v1.1.1
+  - `import`の方法を復元
+  - package.json周りを整理
+  - Sassコンパイルを`node-sass`から`dart-sass`に移行
