@@ -15,7 +15,7 @@
   "scripts": {
     "build:npm": "tsc -p ./tsconfig.build.json",
     "build:cdn": "babel --compact=true ./src/index.ts -o ./dist/js/novel-support.js --plugins babel-plugin-transform-remove-export",
-    "build:sass": "node-sass ./src/_novel-support.scss ./dist/css/novel-support.css --output-style compressed && npm run cpx && npm run autoprefix",
+    "build:sass": "node-sass ./src/_novel-support.scss ./dist/css/novel-support.css --output-style compressed && yarn cpx && yarn autoprefix",
     "build": "run-s build:*",
     "cpx": "cpx ./src/_novel-support.scss ./dist/css/",
     "autoprefix": "postcss --use autoprefixer --no-map -o ./dist/css/novel-support.css ./dist/css/novel-support.css",
