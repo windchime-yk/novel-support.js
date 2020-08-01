@@ -22,8 +22,8 @@ const novelSupport = (elem: string, {content = 'text'}: Option = {}) => {
 
   const elemList = document.querySelectorAll(elem);
 
-  for (let i = 0; i < elemList.length; i++) {
-    const element = elemList[i];
+  for (const query of elemList) {
+    const element = query;
     let obj: string;
     let replaceBody: string;
 
