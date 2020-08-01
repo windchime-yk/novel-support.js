@@ -22,7 +22,8 @@
     "build": "npm-run-all -p build:*",
     "cpx": "cpx ./src/_novel-support.scss ./dist/css/",
     "autoprefix": "postcss --use autoprefixer --no-map -o ./dist/css/novel-support.css ./dist/css/novel-support.css",
-    "lint": "lynt ./src/index.ts --typescript --fix",
+    "lint": "eslint --ext .ts --ignore-path .gitignore .",
+    "lintfix": "yarn lint --fix",
     "test": "jest",
     "coverage": "rimraf coverage/ && yarn test --coverage"
   },
@@ -38,7 +39,7 @@
   "homepage": "https://github.com/windchime-yk/novel-support.js#readme",
   "husky": {
     "hooks": {
-      "pre-commit": "tsc --noEmit && lynt ./src/index.ts --typescript --fix && git add"
+      "pre-commit": "tsc --noEmit && yarn lintfix && git add"
     }
   },
   "jest": {
@@ -64,16 +65,21 @@
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-typescript": "^7.0.0",
     "@types/jest": "^24.0.18",
+    "@typescript-eslint/eslint-plugin": "^3.7.1",
+    "@typescript-eslint/parser": "^3.7.1",
     "autoprefixer": "^9.1.0",
     "babel-plugin-transform-remove-export": "^1.0.0",
     "cpx": "^1.5.0",
+    "eslint": "^7.6.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
     "husky": "^3.0.9",
     "jest": "^24.1.0",
-    "lynt": "^0.2.0",
     "node-sass": "^4.9.3",
     "npm-run-all": "^4.1.3",
     "postcss": "^7.0.2",
     "postcss-cli": "^6.0.0",
+    "prettier": "^2.0.5",
     "rimraf": "^3.0.0",
     "ts-jest": "^24.1.0",
     "typescript": "^3.0.3"
