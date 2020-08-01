@@ -13,9 +13,6 @@
     "package.json"
   ],
   "scripts": {
-    "watch:js": "tsc -w -p ./tsconfig.json",
-    "watch:sass": "node-sass ./src/_novel-support.scss ./dist/css/novel-support.css -w --output-style compressed && npm run cpx && npm run autoprefix",
-    "watch": "npm-run-all -p watch:*",
     "build:npm": "tsc -p ./tsconfig.build.json",
     "build:cdn": "babel --compact=true ./src/index.ts -o ./dist/js/novel-support.js --plugins babel-plugin-transform-remove-export",
     "build:sass": "node-sass ./src/_novel-support.scss ./dist/css/novel-support.css --output-style compressed && npm run cpx && npm run autoprefix",
