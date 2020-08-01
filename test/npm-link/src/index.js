@@ -1,3 +1,3 @@
-import novelSupport from 'novel-support.js';
+import { novelSupport } from 'novel-support.js'
 
-novelSupport('.npmlink');
+novelSupport('.npmlink')

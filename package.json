@@ -22,7 +22,7 @@
     "build": "npm-run-all -p build:*",
     "cpx": "cpx ./src/_novel-support.scss ./dist/css/",
     "autoprefix": "postcss --use autoprefixer --no-map -o ./dist/css/novel-support.css ./dist/css/novel-support.css",
-    "lint": "eslint --ext .ts --ignore-path .gitignore .",
+    "lint": "eslint --ext .js,.ts --ignore-path .gitignore .",
     "lintfix": "yarn lint --fix",
     "test": "jest",
     "coverage": "rimraf coverage/ && yarn test --coverage"
@@ -82,6 +82,6 @@
     "prettier": "^2.0.5",
     "rimraf": "^3.0.0",
     "ts-jest": "^24.1.0",
-    "typescript": "^3.0.3"
+    "typescript": "^3.9.7"
   }
 }
