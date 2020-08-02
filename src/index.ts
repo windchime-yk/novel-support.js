@@ -42,4 +42,4 @@ const novelSupport = (elem: string, { content = 'text' }: Option = {}) => {
   }
 }
 
-export { novelSupport }
+export default novelSupport

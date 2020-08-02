@@ -1,4 +1,4 @@
-import { novelSupport } from '../src/index'
+import novelSupport from '../src/index'
 
 describe('novelSupport', () => {
   test('idでの指定で動作するか', () => {
