@@ -8,6 +8,9 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/2f3d7a337ed46acbc2eb/maintainability)](https://codeclimate.com/github/windchime-yk/novel-support.js/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/2f3d7a337ed46acbc2eb/test_coverage)](https://codeclimate.com/github/windchime-yk/novel-support.js/test_coverage)
 <!-- /badge area -->
+
+【日本語 / [English](./README_ENG.md)】
+
 ## 概要
 このパッケージは、小説投稿サイトにある独自記法をWebサイト上で気軽に使うためのパッケージです。  
 最終目標は、このパッケージを使うだけで、小説投稿サイトからコピペした文章をそれっぽく表示させられるようにすることです。
@@ -24,18 +27,23 @@
 ## 使用方法
 ### yarn（またはnpm）の場合
 #### インストール
-```
+
+```bash
 yarn add novel-support.js
 ```
+
 または
+
 ```
 npm i novel-support.js
 ```
 
 #### 動作準備
+
 ``` scss
 @import "node_modules/novel-support.js/dist/css/_novel-support.scss"
 ```
+
 ```javascript
 import novelSupport from "novel-support.js";
 
@@ -50,19 +58,23 @@ novelSupport('.class', {content: 'html'});
 unpkgとjsDelivrにて提供。
 
 #### CDN設置
+
 ``` html
 <link rel="stylesheet" href="https://unpkg.com/novel-support.js/dist/css/novel-support.css">
 
 <script src="https://unpkg.com/novel-support.js/dist/js/novel-support.js"></script>
 ```
+
 または
-``` html
+
+```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/novel-support.js/dist/css/novel-support.css">
 
 <script src="https://cdn.jsdelivr.net/npm/novel-support.js/dist/js/novel-support.js"></script>
 ```
 
 #### 動作準備
+
 ```javascript
 novelSupport('#id', {content: 'html'});
 // または
@@ -92,12 +104,15 @@ novelSupport('.class', {content: 'html'});
 ※1：ルビ記法のみサポート
 
 ## テスト
-```
+
+```bash
 yarn
 yarn test
 ```
+
 または
-```
+
+```bash
 npm i
 npm test
 ```
