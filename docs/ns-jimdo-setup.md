@@ -8,6 +8,8 @@
 <script defer src="https://resources.whyk.dev/js/ns-jimdo-setup.js"></script>
 ```
 
+【日本語 / [English](./ns-jimdo-setup_ENG.md)】
+
 そのあと、投稿内容で使われているルビタグの一つを|《》に書き換えて更新をしてください  
 その部分がルビとして表示されれば導入は完了です
 
