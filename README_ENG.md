@@ -21,7 +21,7 @@ The ultimate goal is to be able to make text copied and pasted from a novel subm
 - Sass style management makes changes in CSS very easy.
 - Convert text containing your own notation, as found on novel submission sites, into the following
   - Paragraphs with indentations: rice with egg on top => `<p class="ns_indent">Rice with egg on top</p>`
-  - Ruby notation (| 《》 | 《》): |卵かけご飯《Rice with egg on top》 => `<ruby class="ns_ruby">卵かけご飯<rt>Rice with egg on top</rt></ruby>`.rice<rt>egg</rt></ruby>`.
+  - Ruby notation (| 《》 | 《》): |卵かけご飯《Rice with egg on top》 => `<ruby class="ns_ruby">卵かけご飯<rt>Rice with egg on top</rt></ruby>`
   - Circle point notation: `《《Rice with egg on top》 => <strong class="ns_emphasis">Rice with egg on top</strong>`
 
 
