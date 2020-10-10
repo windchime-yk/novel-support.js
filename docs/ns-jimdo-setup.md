@@ -14,3 +14,5 @@
 
 ルビの書き換え方は、下記ドキュメントの『特徴』にある『小説投稿サイトにあるような独自記法を含んだテキストを下記のように変換』の項を読んでもらうとわかりやすいかもしれません  
 https://github.com/windchime-yk/novel-support.js/#readme
+
+Translated with www.DeepL.com/Translator (free version)
