@@ -121,10 +121,10 @@ npm test
 ```
 
 ## Past Changes.
-[CHANGELOG.md](. /CHANGELOG.md)
+[CHANGELOG.md](./CHANGELOG.md)
 
 ## License.
-[MIT](. /LICENSE)
+[MIT](./LICENSE)
 
 ## Link.
 * [CDN Test Page](https://windchime-yk.github.io/novel-support.js/)
