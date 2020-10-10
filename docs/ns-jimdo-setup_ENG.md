@@ -14,3 +14,5 @@ The entire process is then completed once this part of the text appears as Ruby.
 
 You may find it easier to understand how to rewrite rubrics by reading the section "Converting text containing your own notation, as found on novel submission sites, to the following" in the "Features" section of the document below  
 https://github.com/windchime-yk/novel-support.js/#readme
+
+Translated with www.DeepL.com/Translator (free version)
