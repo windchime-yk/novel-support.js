@@ -1,4 +1,4 @@
-# novel-support.js.
+# novel-support.js
 <!-- badge area -->
 [![npm version](https://img.shields.io/npm/v/novel-support.js.svg?style=flat-square)](https://www.npmjs.com/package/novel-support.js)
 [![npm license](https://img.shields.io/npm/l/novel-support.js.svg?style=flat-square)](https://www.npmjs.com/package/novel-support.js)
