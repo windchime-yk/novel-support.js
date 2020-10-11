@@ -9,38 +9,40 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/2f3d7a337ed46acbc2eb/test_coverage)](https://codeclimate.com/github/windchime-yk/novel-support.js/test_coverage)
 <!-- /badge area -->
 
-【日本語 / [English](./README_ENG.md)】
+【[日本語](./README.md) / English】
 
-## 概要
-このパッケージは、小説投稿サイトにある独自記法をWebサイト上で気軽に使うためのパッケージです。  
-最終目標は、このパッケージを使うだけで、小説投稿サイトからコピペした文章をそれっぽく表示させられるようにすることです。
+## Overview.
+This package is designed to make it easy to use the proprietary notation found on novel submission sites on a website.  
+The ultimate goal is to be able to make text copied and pasted from a novel submission site appear as such, just by using this package.
 
-## 特徴
-- jQuery不要
-- class属性で一括指定可能
-- Sassでスタイル管理しているためCSSの変更が容易
-- 小説投稿サイトにあるような独自記法を含んだテキストを下記のように変換
-  - 字下げつき段落づけ：卵かけご飯 => `<p class="ns_indent">卵かけご飯</p>`
-  - ルビ記法（|《》｜《》）：|卵《たまご》かけご|飯《はん》 => `<ruby class="ns_ruby">卵<rt>たまご</rt></ruby>かけご<ruby class="ns_ruby">飯<rt>はん</rt></ruby>`
-  - 圏点記法：《《卵かけご飯》》 => `<strong class="ns_emphasis">卵かけご飯</strong>`
+## Features.
+- jQuery not required.
+- Can be specified en masse by class attribute.
+- Sass style management makes changes in CSS very easy.
+- Convert text containing your own notation, as found on novel submission sites, into the following
+  - Paragraphs with indentations: rice with egg on top => `<p class="ns_indent">Rice with egg on top</p>`
+  - Ruby notation (| 《》 | 《》): |卵かけご飯《Rice with egg on top》 => `<ruby class="ns_ruby">卵かけご飯<rt>Rice with egg on top</rt></ruby>`
+  - Circle point notation: `《《Rice with egg on top》 => <strong class="ns_emphasis">Rice with egg on top</strong>`
 
-## 使用方法
-### yarn（またはnpm）の場合
-#### インストール
+
+## Usage.
+### yarn (or npm)
+#### Installation
 
 ```bash
 yarn add novel-support.js
 ```
 
-または
+or
 
-```
+```bash
 npm i novel-support.js
 ```
 
-#### 動作準備
 
-``` scss
+#### Ready to operate
+
+```scss
 @import "node_modules/novel-support.js/dist/css/_novel-support.scss"
 ```
 
@@ -48,24 +50,24 @@ npm i novel-support.js
 import novelSupport from "novel-support.js";
 
 novelSupport('#id', {content: 'html'});
-// または
+// or
 novelSupport('.class', {content: 'html'});
 
-// {content: 'html'}は省略可能（オプションで詳述）
+// {content: 'html'} is optional and can be omitted (detailed in the options)
 ```
 
-### CDNの場合
-unpkgとjsDelivrにて提供。
+### CDN.
+Provided by unpkg and jsDelivr.
 
-#### CDN設置
+#### CDN installation
 
-``` html
+```html
 <link rel="stylesheet" href="https://unpkg.com/novel-support.js/dist/css/novel-support.css">
 
 <script src="https://unpkg.com/novel-support.js/dist/js/novel-support.js"></script>
 ```
 
-または
+or
 
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/novel-support.js/dist/css/novel-support.css">
@@ -73,21 +75,21 @@ unpkgとjsDelivrにて提供。
 <script src="https://cdn.jsdelivr.net/npm/novel-support.js/dist/js/novel-support.js"></script>
 ```
 
-#### 動作準備
+#### Ready to operate
 
 ```javascript
 novelSupport('#id', {content: 'html'});
-// または
+// or
 novelSupport('.class', {content: 'html'});
 ```
 
-### オプション
-`novelSupport()`の第二引数には、`{content}`を指定できます。
+### Options.
+You can specify `{content}` as the second argument of `novelSupport()`.
 
-変換対象がHTMLタグを含むなら`{content: 'html'}`と記述。何も記述しない場合は、デフォルト引数の`{content: 'text'}`が適用されます。  
-`{content: 'text'}`の場合はすべての変換処理が行なわれ、`{content: 'html'}`の場合は字下げつき段落づけが行なわれません。
+If the target contains HTML tags, the second argument is written as `{content: 'html'}`. If you do not write anything, the default argument, `{content: 'text'}`, is applied.  
+If `{content: 'text'}`, all conversions are done; if `{content: 'html'}`, no paragraphing is done with indentation.
 
-## 動作確認ブラウザ（npmのみ）
+## Verified Browser (npm only)
 ### macOS Mojave v10.14.6
 - Google Chrome v78
 - Mozilla Firefox Quantum v70
@@ -95,34 +97,37 @@ novelSupport('.class', {content: 'html'});
 - Microsoft Edge Chromium Beta v78
 - Opera v64
 
-### Windows10 Home v1903
+### Windows 10 Home v1903
 - Google Chrome v78
 - Mozilla Firefox Quantum v70
-- Microsoft Edge v44 (※1)
-- Microsoft Internet Explorer v11 (※1)
+- Microsoft Edge v44 (*1)
+- Microsoft Internet Explorer v11 (*1)
 
-※1：ルビ記法のみサポート
 
-## テスト
+1: Only ruby notation is supported.
+
+## Test.
 
 ```bash
 yarn
 yarn test
 ```
 
-または
+or
 
 ```bash
 npm i
 npm test
 ```
 
-## 過去の変更点
+## Past Changes.
 [CHANGELOG.md](./CHANGELOG.md)
 
-## ライセンス
+## License.
 [MIT](./LICENSE)
 
-## リンク
-* [CDNテストページ](https://windchime-yk.github.io/novel-support.js/)
-* [バグ報告](https://github.com/windchime-yk/novel-support.js/issues)
+## Link.
+* [CDN Test Page](https://windchime-yk.github.io/novel-support.js/)
+* [bug report](https://github.com/windchime-yk/novel-support.js/issues)
+
+Translated with www.DeepL.com/Translator (free version)
