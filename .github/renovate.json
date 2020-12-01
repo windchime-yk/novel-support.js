@@ -1,0 +1,12 @@
+{
+  "schedule": ["on friday"],
+  "timezone": "Asia/Tokyo",
+  "ignorePaths": ["**/node_modules/**"],
+  "packageRules": [
+    {
+      "updateTypes": ["minor", "patch"],
+      "groupName": "all minor dependencies",
+      "automerge": true
+    }
+  ]
+}
