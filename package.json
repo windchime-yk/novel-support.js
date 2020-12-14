@@ -64,7 +64,7 @@
     "@types/jest": "^26.0.8",
     "@typescript-eslint/eslint-plugin": "^3.7.1",
     "@typescript-eslint/parser": "^4.0.0",
-    "autoprefixer": "^9.8.6",
+    "autoprefixer": "^10.0.0",
     "babel-plugin-transform-remove-export": "^1.0.0",
     "cpx": "^1.5.0",
     "eslint": "^7.6.0",
