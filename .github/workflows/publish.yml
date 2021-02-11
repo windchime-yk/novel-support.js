@@ -5,19 +5,34 @@ on:
     types: [published]
 
 jobs:
-  publish:
-
+  npm-publish:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v1
-    - name: Install dependencies
-      run: yarn
-    - name: Build
-      run: yarn build
-    - name: Create .npmrc
-      run: echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" >> ~/.npmrc
+    - uses: actions/checkout@v2
+    - name: Use Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+        registry-url: 'https://registry.npmjs.org'
+    - name: Publish Package
+      run: |
+        yarn
+        yarn publish --new-version ${GITHUB_REF#"refs/tags/"} --no-git-tag-version
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  gh-publish:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+        registry-url: 'https://npm.pkg.github.com'
     - name: Publish Package
-      run: yarn publish --new-version ${GITHUB_REF#"refs/tags/"} --no-git-tag-version
+      run: |
+        yarn
+        yarn publish --new-version ${GITHUB_REF#"refs/tags/"} --no-git-tag-version
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
