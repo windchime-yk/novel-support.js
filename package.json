@@ -19,7 +19,7 @@
     "build": "run-s build:*",
     "cpx": "cpx ./src/_novel-support.scss ./dist/css/",
     "autoprefix": "postcss --use autoprefixer --no-map -o ./dist/css/novel-support.css ./dist/css/novel-support.css",
-    "check": "biome check .",
+    "check": "biome check . --apply-unsafe",
     "ci": "biome ci .",
     "test": "vitest --run",
     "coverage": "pnpm run test --coverage"

@@ -1,17 +1,17 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.4.1/schema.json",
-	"files": {
-		"ignore": ["coverage"]
-	},
-	"formatter": {
-		"enabled": true,
-		"indentStyle": "space",
-		"indentSize": 2
-	},
-	"linter": {
-		"enabled": true,
-		"rules": {
-			"recommended": true
-		}
-	}
+  "$schema": "https://biomejs.dev/schemas/1.4.1/schema.json",
+  "files": {
+    "ignore": ["coverage"]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true
+    }
+  }
 }
