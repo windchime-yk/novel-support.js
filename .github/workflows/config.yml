@@ -3,7 +3,7 @@ name: Node CI
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     types: [opened, synchronize]
 
@@ -41,6 +41,6 @@ jobs:
       - name: Test(pull request)
         if: github.event_name == 'pull_request'
         run: pnpm test
-      - name: Test(Mergh master branch)
+      - name: Test(Mergh main branch)
         if: github.event_name == 'push'
         run: pnpm test
