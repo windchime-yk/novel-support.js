@@ -8,33 +8,39 @@ on:
     types: [opened, synchronize]
 
 jobs:
-  build:
+  check:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [10.x, 12.x]
-
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup node env
+        uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
-      - name: Use Yarn
-        uses: borales/actions-yarn@v2.3.0
+          node-version: 18
+      - name: Install dependencies
+        uses: pnpm/action-setup@v2
         with:
-          cmd: install
+          version: 7.29.3
+          run_install: true
+      - name: Run code check
+        run: pnpm run ci
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup node env
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependencies
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7.29.3
+          run_install: true
       - name: Test(pull request)
         if: github.event_name == 'pull_request'
-        run: yarn test
-        env:
-          CI: true
-      - name: Test(Mergh master branch) & Publish code coverage
+        run: pnpm test
+      - name: Test(Mergh master branch)
         if: github.event_name == 'push'
-        uses: paambaati/codeclimate-action@v2.7.5
-        env:
-          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-        with:
-          coverageCommand: yarn coverage
-          debug: true
+        run: pnpm test
