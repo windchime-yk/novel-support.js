@@ -89,7 +89,8 @@ pnpm test
 ```
 
 ## 過去の変更点
-[CHANGELOG.md](./CHANGELOG.md)
+v1.1.1までは[CHANGELOG.md](./CHANGELOG.md)。
+以降は[GitHub Release](https://github.com/windchime-yk/novel-support.js/releases)。
 
 ## ライセンス
 [MIT](./LICENSE)
