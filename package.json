@@ -21,8 +21,8 @@
     "build:cdn": "esbuild ./src/index.ts --bundle --format=iife --global-name=novelSupport --outfile=./dist/js/novel-support.js --minify --target=es2015",
     "build:sass": "sass ./src/_novel-support.scss ./dist/css/novel-support.css --style=compressed && cp ./src/_novel-support.scss ./dist/css/",
     "build": "pnpm build:npm && pnpm build:cdn && pnpm build:sass",
-    "check": "biome check . --fix --unsafe",
-    "ci": "biome ci .",
+    "format": "biome check . --fix --unsafe",
+    "check": "biome ci .",
     "test": "vitest --run",
     "coverage": "pnpm run test --coverage"
   },
