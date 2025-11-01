@@ -12,6 +12,10 @@
     "README.md",
     "package.json"
   ],
+  "volta": {
+    "node": "24.11.0"
+  },
+  "packageManager": "pnpm@9.15.9",
   "scripts": {
     "build:npm": "tsc -p ./tsconfig.build.json",
     "build:cdn": "babel --compact=true ./src/index.ts -o ./dist/js/novel-support.js --plugins babel-plugin-transform-remove-export",
