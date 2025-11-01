@@ -8,12 +8,8 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "esModuleInterop": true,
-    "downlevelIteration": true,
+    "downlevelIteration": true
   },
-  "files": [
-    "./src/index.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "files": ["./src/index.ts"],
+  "exclude": ["node_modules"]
 }

@@ -21,7 +21,7 @@
     "build:cdn": "esbuild ./src/index.ts --bundle --format=iife --global-name=novelSupport --outfile=./dist/js/novel-support.js --minify --target=es2015",
     "build:sass": "sass ./src/_novel-support.scss ./dist/css/novel-support.css --style=compressed && cp ./src/_novel-support.scss ./dist/css/",
     "build": "pnpm build:npm && pnpm build:cdn && pnpm build:sass",
-    "check": "biome check . --apply-unsafe",
+    "check": "biome check . --fix --unsafe",
     "ci": "biome ci .",
     "test": "vitest --run",
     "coverage": "pnpm run test --coverage"
@@ -37,12 +37,12 @@
   },
   "homepage": "https://github.com/windchime-yk/novel-support.js#readme",
   "devDependencies": {
-    "@biomejs/biome": "1.4.1",
-    "@vitest/coverage-v8": "^1.1.0",
+    "@biomejs/biome": "2.3.2",
+    "@vitest/coverage-v8": "^4.0.6",
     "esbuild": "^0.25.11",
-    "jsdom": "^23.0.1",
-    "sass": "^1.69.5",
-    "typescript": "^5.3.3",
-    "vitest": "^1.1.0"
+    "happy-dom": "^20.0.10",
+    "sass": "^1.93.3",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.6"
   }
 }
