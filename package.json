@@ -20,7 +20,7 @@
     "build:npm": "tsc -p ./tsconfig.build.json",
     "build:cdn": "esbuild ./src/index.ts --bundle --format=iife --global-name=novelSupport --outfile=./dist/js/novel-support.js --minify --target=es2015",
     "build:sass": "sass ./src/_novel-support.scss ./dist/css/novel-support.css --style=compressed && cp ./src/_novel-support.scss ./dist/css/",
-    "build": "run-s build:*",
+    "build": "pnpm build:npm && pnpm build:cdn && pnpm build:sass",
     "check": "biome check . --apply-unsafe",
     "ci": "biome ci .",
     "test": "vitest --run",
@@ -41,7 +41,6 @@
     "@vitest/coverage-v8": "^1.1.0",
     "esbuild": "^0.25.11",
     "jsdom": "^23.0.1",
-    "npm-run-all": "^4.1.5",
     "sass": "^1.69.5",
     "typescript": "^5.3.3",
     "vitest": "^1.1.0"
