@@ -12,32 +12,32 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup node env
-        uses: actions/setup-node@v3
+        uses: actions/checkout@v5
+      - name: Setup Corepack
+        run: corepack enable
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
         with:
-          node-version: 18
+          node-version-file: package.json
+          cache: pnpm
       - name: Install dependencies
-        uses: pnpm/action-setup@v2
-        with:
-          version: 7.29.3
-          run_install: true
+        run: pnpm i --frozen-lockfile
       - name: Run code check
-        run: pnpm run ci
+        run: pnpm check
   test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup node env
-        uses: actions/setup-node@v3
+        uses: actions/checkout@v5
+      - name: Setup Corepack
+        run: corepack enable
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
         with:
-          node-version: 18
+          node-version-file: package.json
+          cache: pnpm
       - name: Install dependencies
-        uses: pnpm/action-setup@v2
-        with:
-          version: 7.29.3
-          run_install: true
+        run: pnpm i --frozen-lockfile
       - name: Test & Generate coverage
         run: pnpm coverage
       - name: Upload coverage reports to Codecov

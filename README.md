@@ -24,17 +24,13 @@
   - 圏点記法：《《卵かけご飯》》 => `<strong class="ns_emphasis">卵かけご飯</strong>`
 
 ## 使用方法
-### yarn（またはnpm）の場合
+### パッケージマネージャーの場合
 #### インストール
 
+任意のパッケージマネージャーで置き換えてください。
+
 ```bash
-yarn add novel-support.js
-```
-
-または
-
-```
-npm i novel-support.js
+pnpm i novel-support.js
 ```
 
 #### 動作準備
@@ -86,38 +82,15 @@ novelSupport('.class', {content: 'html'});
 変換対象がHTMLタグを含むなら`{content: 'html'}`と記述。何も記述しない場合は、デフォルト引数の`{content: 'text'}`が適用されます。  
 `{content: 'text'}`の場合はすべての変換処理が行なわれ、`{content: 'html'}`の場合は字下げつき段落づけが行なわれません。
 
-## 動作確認ブラウザ（npmのみ）
-### macOS Mojave v10.14.6
-- Google Chrome v78
-- Mozilla Firefox Quantum v70
-- Apple Safari v13
-- Microsoft Edge Chromium Beta v78
-- Opera v64
-
-### Windows10 Home v1903
-- Google Chrome v78
-- Mozilla Firefox Quantum v70
-- Microsoft Edge v44 (※1)
-- Microsoft Internet Explorer v11 (※1)
-
-※1：ルビ記法のみサポート
-
 ## テスト
 
 ```bash
-yarn
-yarn test
-```
-
-または
-
-```bash
-npm i
-npm test
+pnpm test
 ```
 
 ## 過去の変更点
-[CHANGELOG.md](./CHANGELOG.md)
+v1.1.1までは[CHANGELOG.md](./CHANGELOG.md)。
+以降は[GitHub Release](https://github.com/windchime-yk/novel-support.js/releases)。
 
 ## ライセンス
 [MIT](./LICENSE)

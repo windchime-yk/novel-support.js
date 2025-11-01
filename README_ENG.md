@@ -25,17 +25,13 @@ The ultimate goal is to be able to make text copied and pasted from a novel subm
 
 
 ## Usage.
-### yarn (or npm)
+### Package manager
 #### Installation
 
-```bash
-yarn add novel-support.js
-```
-
-or
+Please replace it with your preferred package manager.
 
 ```bash
-npm i novel-support.js
+pnpm i novel-support.js
 ```
 
 
@@ -88,35 +84,10 @@ You can specify `{content}` as the second argument of `novelSupport()`.
 If the target contains HTML tags, the second argument is written as `{content: 'html'}`. If you do not write anything, the default argument, `{content: 'text'}`, is applied.  
 If `{content: 'text'}`, all conversions are done; if `{content: 'html'}`, no paragraphing is done with indentation.
 
-## Verified Browser (npm only)
-### macOS Mojave v10.14.6
-- Google Chrome v78
-- Mozilla Firefox Quantum v70
-- Apple Safari v13
-- Microsoft Edge Chromium Beta v78
-- Opera v64
-
-### Windows 10 Home v1903
-- Google Chrome v78
-- Mozilla Firefox Quantum v70
-- Microsoft Edge v44 (*1)
-- Microsoft Internet Explorer v11 (*1)
-
-
-1: Only ruby notation is supported.
-
 ## Test.
 
 ```bash
-yarn
-yarn test
-```
-
-or
-
-```bash
-npm i
-npm test
+pnpm test
 ```
 
 ## Past Changes.

@@ -1,7 +1,9 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.4.1/schema.json",
-  "files": {
-    "ignore": ["coverage"]
+  "$schema": "https://biomejs.dev/schemas/2.3.2/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
   },
   "formatter": {
     "enabled": true,
