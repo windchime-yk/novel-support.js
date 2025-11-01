@@ -1,7 +1,7 @@
 {
   "name": "novel-support.js",
   "description": "jQuery非依存の、小説投稿サイト代替記号の変換ライブラリ",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "main": "./dist/js/index.js",
   "types": "./dist/js/index.d.ts",
   "unpkg": "./dist/js/novel-support.js",
@@ -18,7 +18,7 @@
   "packageManager": "pnpm@9.15.9",
   "scripts": {
     "build:npm": "tsc -p ./tsconfig.build.json",
-    "build:cdn": "esbuild ./src/index.ts --bundle --format=iife --global-name=novelSupport --outfile=./dist/js/novel-support.js --minify --target=es2015",
+    "build:cdn": "babel --compact=true ./src/index.ts -o ./dist/js/novel-support.js",
     "build:sass": "sass ./src/_novel-support.scss ./dist/css/novel-support.css --style=compressed && cp ./src/_novel-support.scss ./dist/css/",
     "build": "pnpm build:npm && pnpm build:cdn && pnpm build:sass",
     "format": "biome check . --fix --unsafe",
@@ -37,9 +37,13 @@
   },
   "homepage": "https://github.com/windchime-yk/novel-support.js#readme",
   "devDependencies": {
+    "@babel/cli": "^7.28.3",
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "@babel/preset-typescript": "^7.28.5",
     "@biomejs/biome": "2.3.2",
     "@vitest/coverage-v8": "^4.0.6",
-    "esbuild": "^0.25.11",
+    "babel-plugin-transform-remove-export": "^1.0.0",
     "happy-dom": "^20.0.10",
     "sass": "^1.93.3",
     "typescript": "^5.9.3",
