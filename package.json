@@ -19,10 +19,9 @@
   "scripts": {
     "build:npm": "tsc -p ./tsconfig.build.json",
     "build:cdn": "esbuild ./src/index.ts --bundle --format=iife --global-name=novelSupport --outfile=./dist/js/novel-support.js --minify --target=es2015",
-    "build:sass": "sass ./src/_novel-support.scss ./dist/css/novel-support.css --style=compressed && pnpm cpx && pnpm autoprefix",
+    "build:sass": "sass ./src/_novel-support.scss ./dist/css/novel-support.css --style=compressed && pnpm cpx",
     "build": "run-s build:*",
     "cpx": "cpx ./src/_novel-support.scss ./dist/css/",
-    "autoprefix": "postcss --use autoprefixer --no-map -o ./dist/css/novel-support.css ./dist/css/novel-support.css",
     "check": "biome check . --apply-unsafe",
     "ci": "biome ci .",
     "test": "vitest --run",
@@ -41,13 +40,10 @@
   "devDependencies": {
     "@biomejs/biome": "1.4.1",
     "@vitest/coverage-v8": "^1.1.0",
-    "autoprefixer": "^10.4.16",
     "cpx": "^1.5.0",
     "esbuild": "^0.25.11",
     "jsdom": "^23.0.1",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.32",
-    "postcss-cli": "^11.0.0",
     "sass": "^1.69.5",
     "typescript": "^5.3.3",
     "vitest": "^1.1.0"
